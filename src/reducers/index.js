@@ -1,3 +1,4 @@
-// Set up your root reducer here...
- import { combineReducers } from 'redux';
- export default combineReducers;
+// For the moment, just one reducer
+import authReducer from './authReducer';
+
+export default authReducer;

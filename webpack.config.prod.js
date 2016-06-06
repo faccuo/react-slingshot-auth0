@@ -38,6 +38,19 @@ export default {
         test: /(\.css|\.scss)$/,
         include: path.join(__dirname, 'src'),
         loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
+      },
+      {
+        test: /node_modules[\\\/]auth0-lock[\\\/].*\.js$/,
+        loaders: [
+          'transform-loader/cacheable?brfs',
+          'transform-loader/cacheable?packageify'
+        ]
+      }, {
+        test: /node_modules[\\\/]auth0-lock[\\\/].*\.ejs$/,
+        loader: 'transform-loader/cacheable?ejsify'
+      }, {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   }

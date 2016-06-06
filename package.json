@@ -24,12 +24,14 @@
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "auth0-lock": "^9.0.0",
     "object-assign": "4.1.0",
     "react": "15.0.2",
     "react-dom": "15.0.2",
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
-    "redux": "3.5.2"
+    "redux": "3.5.2",
+    "redux-thunk": "2.1.0"
   },
   "devDependencies": {
     "babel-cli": "6.8.0",
@@ -71,7 +73,9 @@
     "style-loader": "0.13.1",
     "webpack": "1.13.0",
     "webpack-dev-middleware": "1.6.1",
-    "webpack-hot-middleware": "2.10.0"
+    "webpack-hot-middleware": "2.10.0",
+    "json-loader": "^0.5.2",
+    "transform-loader": "^0.2.2"
   },
   "keywords:": [
     "react",
