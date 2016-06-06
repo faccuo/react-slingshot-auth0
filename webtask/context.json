@@ -1,0 +1,30 @@
+{
+  "data": {},
+  "params": {},
+  "query": {},
+  "secrets": {},
+  "token": "asdlkjhfaksljdhfalkjshdflkajshdflkajhsdkflhasjkdfahlksdfh",
+  "id": "146524002323.223232392",
+  "body_raw": "{\n    \"name\": \"John Smith\",\n    \"email\": \"random@gmail.com\",\n    \"dob\": 12312413,\n    \"color\": \"#123134\"\n}",
+  "body": {
+    "name": "John Smith",
+    "email": "random@gmail.com",
+    "dob": 12312413,
+    "color": "#123134"
+  },
+  "storage": {
+    "etag": "undefined",
+    "get": [
+      "Function"
+    ],
+    "set": [
+      "Function"
+    ]
+  },
+  "create_token": [
+    "Function"
+  ],
+  "create_token_url": [
+    "Function"
+  ]
+}
