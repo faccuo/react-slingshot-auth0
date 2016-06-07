@@ -50,7 +50,7 @@ class FormPage extends Component {
             required
             hintText="What is your name?"
             floatingLabelText="Name"
-          />
+          /><br/>
           <FormsyText
             name="email"
             validations="isEmail"
@@ -58,7 +58,7 @@ class FormPage extends Component {
             required
             hintText="What is your email?"
             floatingLabelText="email"
-          />
+          /><br/><br/>
           <RaisedButton
             type="submit"
             label="Submit"

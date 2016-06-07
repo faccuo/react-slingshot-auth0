@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import {connect} from 'react-redux';
 
 import FormPage from '../components/FormPage';
+import Loading from '../components/Loading';
 
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
@@ -22,7 +23,9 @@ class LoggedIn extends Component {
   render() {
     const { isSending } = this.props;
 
-    return (<div>
+    return (<div style={{
+      maxWidth: 500
+    }}>
       <AppBar
         title="User data"
         iconElementRight={<IconButton onClick={this.logout.bind(this)}><ExitToApp/></IconButton>}
@@ -30,7 +33,7 @@ class LoggedIn extends Component {
       />
       {
         isSending &&
-        <div>Loading...</div>
+        <div><Loading/></div>
       }
       {
         !isSending &&
