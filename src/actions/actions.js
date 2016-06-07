@@ -1,10 +1,11 @@
 import * as types from '../constants/actionTypes';
 import auth0 from '../businessLogic/auth0';
+import api from '../businessLogic/api';
 import { browserHistory } from 'react-router';
 
 export function logInIfNeeded() {
   return dispatch => {
-    if (auth0().isLoggedIn()) {
+    if (auth0.isLoggedIn()) {
       dispatch({
         type: types.LOGGED_IN
       });
@@ -13,18 +14,18 @@ export function logInIfNeeded() {
       dispatch({
         type: types.LOGIN
       });
-      auth0().triggerLogin();
+      auth0.triggerLogin();
     }
   };
 }
 
 export function logout() {
   return dispatch => {
+    auth0.logout();
+
     dispatch({
       type: types.LOGOUT
     });
-
-    auth0().logout();
   };
 }
 
@@ -35,6 +36,15 @@ export function sendUserData(userData) {
       userData: userData
     });
 
-    
+    api.send(userData).then(function (data) {
+      dispatch({
+        type: types.POST_DATA_SAVED
+      });
+    }).catch(function (error) {
+      dispatch({
+        type: types.POST_DATA_FAILURE,
+        error: error
+      });
+    });
   };
 }
