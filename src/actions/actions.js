@@ -27,3 +27,14 @@ export function logout() {
     auth0().logout();
   };
 }
+
+export function sendUserData(userData) {
+  return dispatch => {
+    dispatch({
+      type: types.POST_DATA,
+      userData: userData
+    });
+
+    
+  };
+}

@@ -1,4 +1,8 @@
-// For the moment, just one reducer
-import authReducer from './authReducer';
+import { combineReducers } from 'redux'
+import auth from './authReducer';
+import userData from './userDataReducer'
 
-export default authReducer;
+export default combineReducers({
+  isLoggedIn: auth,
+  userData
+});

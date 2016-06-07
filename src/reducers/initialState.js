@@ -1,3 +1,6 @@
 export default {
-  isLoggedIn: false
+  isLoggedIn: false,
+  userData: {
+    isSending: false
+  }
 };
