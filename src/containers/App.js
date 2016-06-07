@@ -4,9 +4,9 @@ import { logInIfNeeded, logout  } from '../actions/actions';
 
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
-import ExitToApp from 'material-ui/svg-icons/action/exit-to-app'
+import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
 
-import FormPage from '../components/FormPage'
+import FormPage from '../components/FormPage';
 
 class App extends Component {
 
@@ -14,6 +14,10 @@ class App extends Component {
     const { dispatch } = this.props;
 
     dispatch(logInIfNeeded());
+  }
+
+  send(data) {
+    // TODO
   }
 
   logout() {
@@ -34,7 +38,7 @@ class App extends Component {
             iconElementRight={<IconButton onClick={this.logout.bind(this)}><ExitToApp/></IconButton>}
             iconElementLeft={<div></div>}
           />
-          <FormPage/>
+          <FormPage onSubmit={this.send.bind(this)}/>
         </div>
       );
     } else {
