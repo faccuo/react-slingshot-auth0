@@ -8,10 +8,15 @@ import routes from './routes';
 import configureStore from './store/configureStore';
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 const store = configureStore();
 
 render(
   <Provider store={store}>
-    <Router history={browserHistory} routes={routes}/>
+    <MuiThemeProvider muiTheme={getMuiTheme()}>
+      <Router history={browserHistory} routes={routes}/>
+    </MuiThemeProvider>
   </Provider>, document.getElementById('app')
 );
