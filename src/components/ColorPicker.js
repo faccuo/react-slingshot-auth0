@@ -1,7 +1,7 @@
 /* eslint react/no-set-state: 0 */
 
 import React, { Component, PropTypes } from 'react';
-import { SliderPicker} from 'react-color';
+import { CompactPicker } from 'react-color';
 import TextField from 'material-ui/TextField';
 
 class ColorPicker extends Component {
@@ -9,9 +9,7 @@ class ColorPicker extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      color: '#000000'
-    };
+    this.state = {};
   }
 
   updateColor(newColor) {
@@ -28,11 +26,12 @@ class ColorPicker extends Component {
         hintText="Disabled Hint Text"
         floatingLabelText="Favourite color"
         value={this.state.color}
-        style={{
-          width: '100%'
-        }}
       />
-      <SliderPicker onChangeComplete={this.updateColor.bind(this)} color={this.state.color}/>
+      <div style={{
+        width: 245
+      }}>
+        <CompactPicker onChange={this.updateColor.bind(this)} color={this.state.color}/>
+      </div>
     </div>);
   }
 }
