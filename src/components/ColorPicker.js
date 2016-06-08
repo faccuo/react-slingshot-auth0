@@ -28,6 +28,9 @@ class ColorPicker extends Component {
         hintText="Disabled Hint Text"
         floatingLabelText="Favourite color"
         value={this.state.color}
+        style={{
+          width: '100%'
+        }}
       />
       <SliderPicker onChangeComplete={this.updateColor.bind(this)} color={this.state.color}/>
     </div>);

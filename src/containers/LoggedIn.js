@@ -25,9 +25,7 @@ class LoggedIn extends Component {
   render() {
     const { isFetching, finished, message } = this.props;
 
-    return (<div style={{
-      maxWidth: 500
-    }}>
+    return (<div className="container">
       <AppBar
         title="User data"
         iconElementRight={<IconButton onClick={this.logout.bind(this)}><ExitToApp/></IconButton>}

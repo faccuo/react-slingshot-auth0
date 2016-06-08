@@ -40,9 +40,11 @@ class FormPage extends Component {
     let startDate = new Date();
     startDate.setFullYear(startDate.getFullYear() - 100);
 
-    return (<div style={{
-        padding: 20
-      }}>
+    let fieldStyle = {
+      width: '100%'
+    };
+
+    return (<div className="formPage">
       <Formsy.Form
         onValid={this.enableButton.bind(this)}
         onValidSubmit={this.submitForm.bind(this)}
@@ -54,7 +56,8 @@ class FormPage extends Component {
           required
           hintText="What is your name?"
           floatingLabelText="Name"
-        /><br/>
+          style={fieldStyle}
+        />
         <FormsyText
           name="email"
           validations="isEmail"
@@ -62,24 +65,27 @@ class FormPage extends Component {
           required
           hintText="What is your email?"
           floatingLabelText="email"
-        /><br/>
+          style={fieldStyle}
+        />
         <FormsyDate
           name="date"
           required
           floatingLabelText="Date"
           minDate={startDate}
           maxDate={new Date()}
-        /><br/>
+        />
         <FormsyColorPicker
           name="color"
           title="Favourite color"
           validationError="Please use a valid email"
-          required/><br/>
-        <br/>
+          required
+        />
         <RaisedButton
+          primary={true}
           type="submit"
           label="Submit"
           disabled={!this.state.canSubmit}
+          className="submitButton"
         />
       </Formsy.Form>
     </div>);

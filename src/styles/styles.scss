@@ -1,0 +1,40 @@
+body {
+  background-color: #f8f8f8;
+  margin: 0 auto;
+}
+
+.submitButton {
+  margin-top: 50px;
+  color: white;
+}
+
+.formPage {
+  padding: 0 25px 25px 25px;
+}
+
+/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .container {
+    max-width: 850px;
+    margin: 40px auto 10px auto;
+  }
+
+  .formPage {
+    padding: 55px 80px 55px 80px;
+  }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
