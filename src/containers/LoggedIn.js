@@ -63,7 +63,7 @@ function mapStateToProps(state) {
   return {
     isFetching: state.userData.isFetching,
     finished: state.userData.finished,
-    message: state.userData.message
+    message: state.userData.message || ''
   };
 }
 

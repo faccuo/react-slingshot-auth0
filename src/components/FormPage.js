@@ -1,10 +1,13 @@
 /* eslint react/no-set-state: 0 */
 
 import React, { PropTypes, Component } from 'react';
+import objectAssign from 'object-assign';
 
 import Formsy from 'formsy-react';
 import RaisedButton from 'material-ui/RaisedButton';
-import { FormsyText } from 'formsy-material-ui/lib';
+import { FormsyText, FormsyDate } from 'formsy-material-ui/lib';
+import ColorPicker from './ColorPicker';
+import FormsyColorPicker from './FormsyColorPicker';
 
 class FormPage extends Component {
 
@@ -30,10 +33,16 @@ class FormPage extends Component {
   }
 
   submitForm(data) {
+    return console.log(data);
     this.props.onSubmit(data);
   }
 
   render() {
+    // DatePicker control is broken: https://github.com/callemall/material-ui/pull/4381
+    // Should allow 100 years in the past but right now it's limited by a CSS issue (down to 53y ago).
+    let startDate = new Date();
+    startDate.setFullYear(startDate.getFullYear() - 100);
+
     return (<div style={{
         padding: 20
       }}>
@@ -56,7 +65,20 @@ class FormPage extends Component {
           required
           hintText="What is your email?"
           floatingLabelText="email"
-        /><br/><br/>
+        /><br/>
+        <FormsyDate
+          name="date"
+          required
+          floatingLabelText="Date"
+          minDate={startDate}
+          maxDate={new Date()}
+        /><br/>
+        <FormsyColorPicker
+          name="color"
+          title="Favourite color"
+          validationError="Please use a valid email"
+          required/><br/>
+        <br/>
         <RaisedButton
           type="submit"
           label="Submit"

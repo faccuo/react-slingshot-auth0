@@ -15,8 +15,6 @@ app.post('/', function (req, res) {
     text: contentFrom(req.webtaskContext.body)
   };
 
-  console.log(payload);
-
   sendgrid(req.webtaskContext.data.SENDGRID_API_KEY).send(payload, function (err, json) {
     if (err) {
       return res.status(500).send("Error sending data.");
