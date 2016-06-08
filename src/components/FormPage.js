@@ -1,12 +1,10 @@
 /* eslint react/no-set-state: 0 */
 
 import React, { PropTypes, Component } from 'react';
-import objectAssign from 'object-assign';
 
 import Formsy from 'formsy-react';
 import RaisedButton from 'material-ui/RaisedButton';
 import { FormsyText, FormsyDate } from 'formsy-material-ui/lib';
-import ColorPicker from './ColorPicker';
 import FormsyColorPicker from './FormsyColorPicker';
 
 class FormPage extends Component {
@@ -33,7 +31,6 @@ class FormPage extends Component {
   }
 
   submitForm(data) {
-    return console.log(data);
     this.props.onSubmit(data);
   }
 
