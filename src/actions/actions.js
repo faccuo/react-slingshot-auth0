@@ -38,12 +38,14 @@ export function sendUserData(userData) {
 
     api.send(userData).then(function (data) {
       dispatch({
-        type: types.POST_DATA_SAVED
+        type: types.POST_DATA_SAVED,
+        message: "Data sent."
       });
     }).catch(function (error) {
       dispatch({
         type: types.POST_DATA_FAILURE,
-        error: error
+        error: error,
+        message: "Error sending data."
       });
     });
   };

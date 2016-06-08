@@ -35,37 +35,35 @@ class FormPage extends Component {
   }
 
   render() {
-    return (<div>
-      <Paper style={{
+    return (<div style={{
         padding: 20
       }}>
-        <Formsy.Form
-          onValid={this.enableButton.bind(this)}
-          onValidSubmit={this.submitForm.bind(this)}
-          onInvalid={this.disableButton.bind(this)}>
-          <FormsyText
-            name="name"
-            validations="isWords"
-            validationError="Please only use letters"
-            required
-            hintText="What is your name?"
-            floatingLabelText="Name"
-          /><br/>
-          <FormsyText
-            name="email"
-            validations="isEmail"
-            validationError="Please use a valid email"
-            required
-            hintText="What is your email?"
-            floatingLabelText="email"
-          /><br/><br/>
-          <RaisedButton
-            type="submit"
-            label="Submit"
-            disabled={!this.state.canSubmit}
-          />
-        </Formsy.Form>
-      </Paper>
+      <Formsy.Form
+        onValid={this.enableButton.bind(this)}
+        onValidSubmit={this.submitForm.bind(this)}
+        onInvalid={this.disableButton.bind(this)}>
+        <FormsyText
+          name="name"
+          validations="isWords"
+          validationError="Please only use letters"
+          required
+          hintText="What is your name?"
+          floatingLabelText="Name"
+        /><br/>
+        <FormsyText
+          name="email"
+          validations="isEmail"
+          validationError="Please use a valid email"
+          required
+          hintText="What is your email?"
+          floatingLabelText="email"
+        /><br/><br/>
+        <RaisedButton
+          type="submit"
+          label="Submit"
+          disabled={!this.state.canSubmit}
+        />
+      </Formsy.Form>
     </div>);
   }
 }

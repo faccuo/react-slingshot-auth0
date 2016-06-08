@@ -6,19 +6,16 @@ export default function userData(state = initialState.userData, action) {
   switch (action.type) {
     case POST_DATA:
       return objectAssign({}, state, {
-        isSending: true,
+        isFetching: true,
+        finished: false,
         data: action.userData
       });
     case POST_DATA_SAVED:
-      return objectAssign({}, state, {
-        isSending: false,
-        saved: true
-      });
     case POST_DATA_FAILURE:
       return objectAssign({}, state, {
-        isSending: false,
-        saved: false,
-        error: action.error.message
+        isFetching: false,
+        finished: true,
+        message: action.message
       });
     default:
       return state;

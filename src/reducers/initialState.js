@@ -1,7 +1,7 @@
 export default {
   isLoggedIn: false,
   userData: {
-    isSending: false,
-    saved: false
+    isFetching: false,
+    finished: false
   }
 };

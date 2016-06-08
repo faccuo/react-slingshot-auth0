@@ -7,6 +7,8 @@ import Loading from '../components/Loading';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
+import Snackbar from 'material-ui/Snackbar';
+import Paper from 'material-ui/Paper';
 
 import { logout, sendUserData  } from '../actions/actions';
 
@@ -21,7 +23,7 @@ class LoggedIn extends Component {
   }
 
   render() {
-    const { isSending } = this.props;
+    const { isFetching, finished, message } = this.props;
 
     return (<div style={{
       maxWidth: 500
@@ -31,26 +33,38 @@ class LoggedIn extends Component {
         iconElementRight={<IconButton onClick={this.logout.bind(this)}><ExitToApp/></IconButton>}
         iconElementLeft={<div></div>}
       />
-      {
-        isSending &&
-        <div><Loading/></div>
-      }
-      {
-        !isSending &&
-        <FormPage onSubmit={this.send.bind(this)}/>
-      }
+      <Paper>
+        {
+          isFetching &&
+          <Loading/>
+        }
+        {
+          !isFetching &&
+          <FormPage onSubmit={this.send.bind(this)}/>
+        }
+        <Snackbar
+          open={finished}
+          message={message}
+          autoHideDuration={4000}/>
+      </Paper>
     </div>);
   }
 
 }
 
 LoggedIn.propTypes = {
-  isSending: PropTypes.bool.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+  finished: PropTypes.bool.isRequired,
+  message: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
-  return {isSending: state.userData.isSending};
+  return {
+    isFetching: state.userData.isFetching,
+    finished: state.userData.finished,
+    message: state.userData.message
+  };
 }
 
 export default connect(mapStateToProps)(LoggedIn);
