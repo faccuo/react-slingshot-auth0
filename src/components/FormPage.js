@@ -45,6 +45,7 @@ class FormPage extends Component {
     };
 
     return (<div className="formPage">
+      <h2>Please, fill the form with your data</h2>
       <Formsy.Form
         onValid={this.enableButton.bind(this)}
         onValidSubmit={this.submitForm.bind(this)}

@@ -9,7 +9,7 @@ body {
 }
 
 .formPage {
-  padding: 0 25px 25px 25px;
+  padding: 10px 25px 25px 25px;
 }
 
 /* Mobile first queries */
@@ -21,11 +21,11 @@ body {
 @media (min-width: 550px) {
   .container {
     max-width: 850px;
-    margin: 40px auto 10px auto;
+    margin: 0px auto 10px auto;
   }
 
   .formPage {
-    padding: 55px 80px 55px 80px;
+    padding: 25px 80px 55px 80px;
   }
 }
 
