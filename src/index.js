@@ -15,10 +15,10 @@ import App from './containers/App';
 const store = configureStore();
 const muiTheme = getMuiTheme({
   appBar: {
-    color: '#4285f4'
+    color: '#1c0c2a'
   },
   raisedButton: {
-    primaryColor: '#4285f4',
+    primaryColor: '#1c0c2a',
     primaryTextColor: 'white'
   }
 });

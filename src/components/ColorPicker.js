@@ -3,13 +3,16 @@
 import React, { Component, PropTypes } from 'react';
 import { CompactPicker } from 'react-color';
 import TextField from 'material-ui/TextField';
+import Paper from 'material-ui/Paper';
 
 class ColorPicker extends Component {
 
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      color: '#000000'
+    };
   }
 
   updateColor(newColor) {
@@ -21,12 +24,21 @@ class ColorPicker extends Component {
 
   render() {
     return (<div>
-      <TextField
-        disabled={true}
-        hintText="Disabled Hint Text"
-        floatingLabelText="Favourite color"
-        value={this.state.color}
-      />
+      <div>
+        <TextField
+          disabled={true}
+          hintText="Disabled Hint Text"
+          floatingLabelText="Favourite color"
+          value={this.state.color}
+        />
+        <Paper style={{
+          display: 'inline-block',
+          width: 50,
+          marginLeft: -50,
+          height: 30,
+          backgroundColor: this.state.color
+        }}/>
+      </div>
       <div style={{
         width: 245
       }}>

@@ -24,12 +24,12 @@ class LoggedIn extends Component {
 
   render() {
     const { isFetching, finished, message } = this.props;
+    const logo = require('../images/auth0-logo-light.png');
 
     return (<div className="container">
       <AppBar
-        title="User data"
         iconElementRight={<IconButton onClick={this.logout.bind(this)}><ExitToApp/></IconButton>}
-        iconElementLeft={<div></div>}
+        iconElementLeft={<img src={logo} style={{ height: 47 }}></img>}
       />
       <Paper>
         {
