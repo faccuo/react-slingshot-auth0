@@ -3,7 +3,6 @@
 import React, { PropTypes, Component } from 'react';
 
 import Formsy from 'formsy-react';
-import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import { FormsyText } from 'formsy-material-ui/lib';
 

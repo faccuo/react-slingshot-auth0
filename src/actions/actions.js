@@ -36,7 +36,7 @@ export function sendUserData(userData) {
       userData: userData
     });
 
-    api.send(userData).then(function (data) {
+    api.send(userData).then(function () {
       dispatch({
         type: types.POST_DATA_SAVED,
         message: "Data sent."

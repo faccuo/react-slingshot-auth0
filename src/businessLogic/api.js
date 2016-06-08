@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 import auth0 from './auth0';
 
 const api = (function () {
@@ -6,7 +7,7 @@ const api = (function () {
     if (response.status >= 200 && response.status < 300) {
       return response;
     } else {
-      var error = new Error(response.statusText);
+      let error = new Error(response.statusText);
       error.response = response;
       throw error;
     }
