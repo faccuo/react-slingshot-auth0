@@ -25,7 +25,7 @@ class App extends Component {
 
         <Paper>
           <Snackbar
-            open={finished}
+            open={message != null}
             message={message}
             autoHideDuration={4000}/>
         </Paper>
@@ -36,15 +36,13 @@ class App extends Component {
 
 App.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
-  finished: PropTypes.bool.isRequired,
-  message: PropTypes.string.isRequired
+  message: PropTypes.string
 };
 
 function mapStateToProps(state) {
   return {
     isLoggedIn: state.isLoggedIn,
-    finished: state.userData.finished,
-    message: state.userData.message || ''
+    message: state.message
   };
 }
 

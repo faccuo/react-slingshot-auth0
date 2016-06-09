@@ -52,7 +52,7 @@ LoggedIn.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    isFetching: state.userData.isFetching
+    isFetching: state.isFetching
   };
 }
 
