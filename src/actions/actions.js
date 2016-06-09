@@ -36,17 +36,26 @@ export function sendUserData(userData) {
       userData: userData
     });
 
-    api.send(userData).then(function () {
-      dispatch({
-        type: types.POST_DATA_SAVED,
-        message: "Data sent."
-      });
-    }).catch(function (error) {
-      dispatch({
-        type: types.POST_DATA_FAILURE,
-        error: error,
-        message: "Error sending data."
-      });
-    });
+    api.send(userData)
+      .then(function (response) {
+        const validStatus = response.status >= 200 && response.status < 300;
+
+        if (validStatus) {
+          dispatch({
+            type: types.POST_DATA_SAVED,
+            message: "Data sent."
+          });
+        } else if (response.status == 401) {
+          auth0.logout();
+          dispatch({
+            type: types.UNAUTHENTICATED_REQUEST
+          });
+        } else {
+          dispatch({
+            type: types.POST_DATA_FAILURE,
+            message: "Error sending data. Try again."
+          });
+        }
+      })
   };
 }

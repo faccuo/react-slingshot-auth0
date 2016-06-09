@@ -23,7 +23,7 @@ const api = (function () {
           'Authorization': `Bearer ${auth0.getIdToken()}`
         },
         body: JSON.stringify(data)
-      }).then(checkStatus);
+      });
     }
   };
 

@@ -63,6 +63,7 @@ class FormPage extends Component {
           name="email"
           validations="isEmail"
           validationError="Please use a valid email"
+          type="email"
           required
           hintText="What is your email?"
           floatingLabelText="email"
@@ -74,6 +75,7 @@ class FormPage extends Component {
           floatingLabelText="Date"
           minDate={startDate}
           maxDate={new Date()}
+          autoOk={true}
         />
         <FormsyColorPicker
           name="color"

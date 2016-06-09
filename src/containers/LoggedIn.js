@@ -7,7 +7,6 @@ import Loading from '../components/Loading';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
-import Snackbar from 'material-ui/Snackbar';
 import Paper from 'material-ui/Paper';
 
 import { logout, sendUserData  } from '../actions/actions';
@@ -40,10 +39,6 @@ class LoggedIn extends Component {
           !isFetching &&
           <FormPage onSubmit={this.send.bind(this)}/>
         }
-        <Snackbar
-          open={finished}
-          message={message}
-          autoHideDuration={4000}/>
       </Paper>
     </div>);
   }
@@ -52,16 +47,12 @@ class LoggedIn extends Component {
 
 LoggedIn.propTypes = {
   isFetching: PropTypes.bool.isRequired,
-  finished: PropTypes.bool.isRequired,
-  message: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    isFetching: state.userData.isFetching,
-    finished: state.userData.finished,
-    message: state.userData.message || ''
+    isFetching: state.userData.isFetching
   };
 }
 
