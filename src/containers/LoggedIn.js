@@ -11,7 +11,7 @@ import Paper from 'material-ui/Paper';
 
 import { logout, sendUserData  } from '../actions/actions';
 
-class LoggedIn extends Component {
+export class LoggedIn extends Component {
 
   logout() {
     this.props.dispatch(logout());

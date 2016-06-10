@@ -153,10 +153,10 @@ const auth0 = function () {
 ...
 ```
 
-The example currently have tests covering **reducers** and the **Auth0Lock** react component.
+The example currently have tests covering **reducers** and **Auth0Lock/LoggedIn** react components.
 
 ## Pending tasks
- - Verify the token we have locally stored in order to check is has not already expired. That could be done with [jsrsasign](https://kjur.github.io/jsrsasign/) library.
+ - Decode the token we have locally stored in order to check is has not already expired. That could be done with [jwt-decode](https://github.com/auth0/jwt-decode) library.
  - Add more test coverage to existing components.
  - ...
 
