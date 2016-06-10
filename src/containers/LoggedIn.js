@@ -22,7 +22,7 @@ class LoggedIn extends Component {
   }
 
   render() {
-    const { isFetching, finished, message } = this.props;
+    const { isFetching } = this.props;
     const logo = require('../images/auth0-logo-light.png');
 
     return (<div className="container">

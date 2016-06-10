@@ -56,6 +56,6 @@ export function sendUserData(userData) {
             message: "Error sending data. Try again."
           });
         }
-      })
+      });
   };
 }

@@ -42,7 +42,7 @@ describe('Reducers::root', () => {
       isFetching: true
     });
 
-    var result = reducer(getAppState(), {
+    let result = reducer(getAppState(), {
       type: types.POST_DATA,
       userData: getAppState().data
     });
@@ -55,7 +55,7 @@ describe('Reducers::root', () => {
       isFetching: true
     });
 
-    var result = reducer(getAppState(), {
+    let result = reducer(getAppState(), {
       type: types.POST_DATA,
       userData: getAppState().data
     });
@@ -64,7 +64,7 @@ describe('Reducers::root', () => {
   });
 
   it('should stay logged in but clean state when POST_DATA_SAVED/POST_DATA_FAILURE from any given state', () => {
-    var message = "Error message";
+    let message = "Error message";
 
     const expected = Object.assign(getAppState(), {
       isFetching: false,

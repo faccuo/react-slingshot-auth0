@@ -1,4 +1,5 @@
 /* eslint-disable import/default */
+/* eslint-disable import/no-named-as-default */
 
 import React from 'react';
 import {render} from 'react-dom';

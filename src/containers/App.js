@@ -12,7 +12,7 @@ import Auth0Lock from './Auth0Lock';
 export class App extends Component {
 
   render() {
-    const { isLoggedIn, finished, message } = this.props;
+    const { isLoggedIn, message } = this.props;
 
     return (
       <div>
