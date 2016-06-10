@@ -7,7 +7,9 @@ import Paper from 'material-ui/Paper';
 import LoggedIn from './LoggedIn';
 import Auth0Lock from './Auth0Lock';
 
-class App extends Component {
+// This export for tests: { App }
+// http://redux.js.org/docs/recipes/WritingTests.html
+export class App extends Component {
 
   render() {
     const { isLoggedIn, finished, message } = this.props;

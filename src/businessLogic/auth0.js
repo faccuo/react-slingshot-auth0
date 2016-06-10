@@ -1,11 +1,12 @@
-import Auth0Lock from 'auth0-lock';
 
-const auth0 = (function () {
+const auth0 = function () {
 
+  // Should be here to avoid its loading in testing:
+  // https://github.com/auth0/lock/issues/242
+  const Auth0Lock = require('auth0-lock');
   const lock = new Auth0Lock('1dHvMOOrGlpF5t9BaLegAerNDZOhlj0J', 'react-slingshot-sample.auth0.com');
 
   return {
-
     getIdToken: function () {
       let idToken = localStorage.getItem('userToken');
       let authHash = lock.parseHash(window.location.hash);
@@ -38,6 +39,6 @@ const auth0 = (function () {
 
   };
 
-})();
+};
 
 export default auth0;

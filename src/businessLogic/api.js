@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 import auth0 from './auth0';
 
-const api = (function () {
+const api = function () {
 
   function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
@@ -20,13 +20,13 @@ const api = (function () {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${auth0.getIdToken()}`
+          'Authorization': `Bearer ${auth0().getIdToken()}`
         },
         body: JSON.stringify(data)
       });
     }
   };
 
-})();
+};
 
 export default api;

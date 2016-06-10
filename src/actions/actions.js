@@ -5,7 +5,7 @@ import { browserHistory } from 'react-router';
 
 export function logInIfNeeded() {
   return dispatch => {
-    if (auth0.isLoggedIn()) {
+    if (auth0().isLoggedIn()) {
       dispatch({
         type: types.LOGGED_IN
       });
@@ -14,14 +14,14 @@ export function logInIfNeeded() {
       dispatch({
         type: types.LOGIN
       });
-      auth0.triggerLogin();
+      auth0().triggerLogin();
     }
   };
 }
 
 export function logout() {
   return dispatch => {
-    auth0.logout();
+    auth0().logout();
 
     dispatch({
       type: types.LOGOUT
@@ -36,7 +36,7 @@ export function sendUserData(userData) {
       userData: userData
     });
 
-    api.send(userData)
+    api().send(userData)
       .then(function (response) {
         const validStatus = response.status >= 200 && response.status < 300;
 
@@ -46,7 +46,7 @@ export function sendUserData(userData) {
             message: "Data sent."
           });
         } else if (response.status == 401) {
-          auth0.logout();
+          auth0().logout();
           dispatch({
             type: types.UNAUTHENTICATED_REQUEST
           });

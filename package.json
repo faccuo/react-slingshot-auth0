@@ -67,6 +67,7 @@
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.8.5",
     "isparta": "4.0.0",
+    "json-loader": "^0.5.2",
     "mocha": "2.4.5",
     "node-sass": "3.7.0",
     "npm-run-all": "1.8.0",
@@ -77,11 +78,10 @@
     "sinon": "1.17.4",
     "sinon-chai": "2.8.0",
     "style-loader": "0.13.1",
+    "transform-loader": "^0.2.2",
     "webpack": "1.13.0",
     "webpack-dev-middleware": "1.6.1",
-    "webpack-hot-middleware": "2.10.0",
-    "json-loader": "^0.5.2",
-    "transform-loader": "^0.2.2"
+    "webpack-hot-middleware": "2.10.0"
   },
   "keywords:": [
     "react",
